@@ -3,17 +3,17 @@
     'use strict';
   
     var infoController = function(MenuService, ApiPath) {
-        var vm = this;
-        vm.apiPath = ApiPath;
+        var infoCtrl = this;
+        infoCtrl.apiPath = ApiPath;
 
-        vm.signedUp = false;
+        infoCtrl.signedUp = false;
 
-        vm.user = MenuService.getUser();
-        console.log('User is', vm.user);
-        if (angular.equals(vm.user, {})) {
-            vm.signedUp = false;
+        infoCtrl.user = MenuService.getUser();
+        console.log('User is', infoCtrl.user);
+        if (angular.equals(infoCtrl.user, {})) {
+            infoCtrl.signedUp = false;
         } else {
-            vm.signedUp = true;
+            infoCtrl.signedUp = true;
         }
     };
 

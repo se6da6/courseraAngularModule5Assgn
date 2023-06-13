@@ -1,0 +1,48 @@
+<!-- signup.html -->
+<div class="container">
+    <h2>Sign Up</h2>
+    <form name="signupForm" ng-submit="signupCtrl.submitForm(signupForm.$valid)" novalidate>
+      <!-- First Name -->
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" ng-model="signupCtrl.user.firstName" required>
+        <div ng-show="signupForm.firstName.$dirty && signupForm.firstName.$error.required" class="help-block">First name is required.</div>
+      </div>
+  
+      <!-- Last Name -->
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" ng-model="signupCtrl.user.lastName" required>
+        <div ng-show="signupForm.lastName.$dirty && signupForm.lastName.$error.required" class="help-block">Last name is required.</div>
+      </div>
+      
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" id="email" name="email" ng-model="signupCtrl.user.email" required>
+        <div ng-show="signupForm.email.$dirty && signupForm.email.$error.required" class="help-block">Email is required.</div>
+      </div>
+      
+  
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" ng-model="signupCtrl.user.phoneNumber" required>
+        <div ng-show="signupForm.phoneNumber.$dirty && signupForm.phoneNumber.$error.required" class="help-block">Phone number is required.</div>
+      </div>
+      
+  
+      <!-- Favorite Menu Item -->
+      <div class="form-group">
+        <label for="favoriteMenuItem">Favorite Menu Item:</label>
+        <input type="text" class="form-control" id="favoriteMenuItem" name="favoriteMenuItem" ng-model="signupCtrl.user.favoriteMenuItem" required>
+        <div ng-show="signupForm.favoriteMenuItem.$dirty && signupForm.favoriteMenuItem.$error.required" class="help-block">Favorite Menu Item is required.</div>
+      </div>
+      
+      <!-- Similar code as above for Favorite Menu Item -->
+  
+      <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid">Submit</button>
+    </form>
+    <div ng-show="signupCtrl.showMessage">{{ signupCtrl.message }}</div>
+  </div>
+  
